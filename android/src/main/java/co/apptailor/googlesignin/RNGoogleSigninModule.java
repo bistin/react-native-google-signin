@@ -131,6 +131,7 @@ public class RNGoogleSigninModule
             params.putString("name", acct.getDisplayName());
             params.putString("email", acct.getEmail());
             params.putString("accessToken", acct.getIdToken());
+            params.putString("userId", acct.getId());
 
             _context.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
                     .emit("googleSignIn", params);
